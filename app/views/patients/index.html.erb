@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .navbar 
+  {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+  }
+  .dropdown-menu 
+  {
+    width: 100px !important;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/patients">
+        <img src="https://d2i6vk5bmh3r0a.cloudfront.net/images_2_0/assets/svg/invis_logo_black-f6c4c07a1c4fd883eaa7700fa407c0b1eee748ec5e39566d4526419a4d72a89a.svg" style="width: 150px">
+        </a>
+
+      </div>
+      <div class="nav navbar-right">
+        <div class="dropdown">
+          <button type="button" class="btn btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin: 10px"><span class="glyphicon glyphicon-th"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">
+                <% if user_signed_in? %>
+                    <%= link_to('Log Out',destroy_user_session_path, :method => :delete) %>
+                <% end %>  
+                </a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+              </ul>
+        </div>
+    </div>
+  </nav>
+<%= link_to 'New Patient',new_patient_path,class: "btn btn-default" %>
+<h1 style="text-align: center;">All the Patients of Dr.<%= current_user.email.split('@')[0].capitalize %></h1>
+
+
+<table class="table table-hover table-striped" style="text-align: center;">
+  <thead>
+    <tr class=>
+      <th class="col-xs-1" style="text-align: center"><%= sort_link @search, :id, "Patient_ID"%></th>
+      <th class="col-xs-1" style="text-align: center"><%= sort_link @search, :Name, "Name"%></th>
+      <th class="col-xs-1" style="text-align: center"><%= sort_link @search, :age, "Age"%></th>
+      <th class="col-xs-2" style="text-align: center"><%= sort_link @search, :email, "E-mail"%></th>
+      <th class="col-xs-1" style="text-align: center"><%= sort_link @search, :address, "Address"%></th>
+      <th class="col-xs-2" style="text-align: center"><%= sort_link @search, :details, "Details"%></th>
+      <th class="col-xs-1" style="text-align: center"><%= sort_link @search, :date, "date"%></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patient.each do |patient| %>
+      <tr>  
+        <td><%= patient.id %></td>
+        <td><%= patient.name %></td>
+        <td><%= patient.age %></td>
+        <td><%= patient.email %></td>
+        <td><%= patient.address %></td>
+        <td><%= patient.details %></td>
+        <td><%= patient.date %></td>
+        <td width="10%" class="text-right col-xs-1">
+          <%= link_to 'Edit',edit_patient_path(patient), class: "btn btn-default",color: "black" %>
+          <%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger btn-outline-danger " %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div style="text-align: center;background-color: none">
+<%= will_paginate @patient %>
+</div>
+<div class="col-md-12" style="text-align: center;">
+    <%= search_form_for @search do |f| %>
+    <%= f.text_field :name_or_details_or_email_or_address_or_age_cont, class: 'form',placeholder: "Name/details/email/address" %></br>
+    <%= link_to "Clear", request.path, class: "btn btn-default" %>
+    <%= f.submit class: 'btn btn-primary', style: "margin-left : 3px"%>
+    <% end %>
+</div>
+</body>
+</html>
