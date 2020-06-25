@@ -1,0 +1,8 @@
+<div class="container">
+<h1>Editing Meeting</h1>
+
+<%= render 'form', meeting: @meeting %>
+<br>
+<%= link_to 'Show All Appointments', meetings_path,class: "btn btn-default" %>
+<%= link_to 'Delete', @meeting, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger btn-outline-danger " %>
+</div>

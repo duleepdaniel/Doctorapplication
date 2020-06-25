@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container-sm">
+<div class="modal-body row">
+  <div class="col-md-7">
+    <h1 style="text-align: center">Already Existing Appointments of Dr.<%= current_user.email.split('@')[0].capitalize %></h1>
+    <%= month_calendar events: @meetings do |date, meetings| %>
+    <%= date %>
+    <% meetings.each do |meeting| %>
+      <div>
+        <%= meeting.patient.name%> has
+        <%= link_to meeting.name, meeting %> 
+      </div>
+    <% end %>
+<% end %>
+      
+  </div>
+  <div class="col-md-5">
+    <h1 style="text-align: center">Enter the Details of the Meeting</h1>
+    <%= render 'form', meeting: @meeting %>
+  </div>
+  <%= link_to "Show all Appointments", meetings_path,class: "btn btn-info" %>
+</div>

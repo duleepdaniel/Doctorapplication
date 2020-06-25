@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Doctor Application</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      .footer {
+          text-align: center;
+          background-color: rgb(0, 83, 156);
+          color: white;
+          position: fixed;
+          width: 100%;
+          bottom:0;
+      }
+  .navbar 
+  {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+  }
+  .dropdown-menu 
+  {
+    width: 100px !important;
+    text-align: center;
+  }
+  .alert {
+  height: 30px;
+  line-height:30px;
+  padding:0px 15px;
+  text-align: center;
+}
+.row{
+  margin-right:0 !important;
+}
+.signinpage{ text-align: center; padding-top: 300px;
+  background-image: url"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fmedical-background&psig=AOvVaw2W4RLwfMQ1Dt9GpjeXVng-&ust=1592980684027000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDbs8ipl-oCFQAAAAAdAAAAABAD";
+  background-repeat: no-repeat;
+  background-position: center;
+    background-size: contain;
+  }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/patients">
+        <img src="https://d2i6vk5bmh3r0a.cloudfront.net/images_2_0/assets/svg/invis_logo_black-f6c4c07a1c4fd883eaa7700fa407c0b1eee748ec5e39566d4526419a4d72a89a.svg" style="width: 150px">
+        </a>
+
+      </div>
+      <% if user_signed_in? %>
+      <div class="nav navbar-right">
+        <div class="dropdown">
+          <button type="button" class="btn btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin: 10px"><span class="glyphicon glyphicon-th"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">
+                    <%= link_to('Log Out',destroy_user_session_path, :method => :delete) %>
+                </a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+              </ul>
+        </div>
+    </div>
+    <% end %>  
+  </nav>
+  <% if notice %><p class="alert alert-success"><%= notice %></p><% end %>
+  <% if alert %><p class="alert alert-danger"><%= alert %></p><% end %>
+    <div class="container-sm">
+      <%= yield %>
+    </div>
+      <div class="footer">
+        <h4>Contact for any issues</h4>
+      </div>
+  </body>
+</html>

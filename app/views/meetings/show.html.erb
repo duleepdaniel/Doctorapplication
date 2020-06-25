@@ -1,0 +1,33 @@
+
+<style>
+	.jumbotron {
+   vertical-align: middle;
+}
+</style>
+<div class="jumbotron align-items-center">
+	<div class="container" >
+<p>
+  <strong>Patitent_ID:</strong>
+  <%= @meeting.patient.id %>
+</p>
+<p>
+  <strong>Patitent_Name:</strong>
+  <%= @meeting.patient.name %>
+</p>
+<p>
+  <strong>Purpose:</strong>
+  <%= @meeting.name %>
+</p>
+<p>
+  <strong>Start_Time:</strong>
+  <%= @meeting.start_time %>
+</p>
+<p>
+  <strong>end_Time:</strong>
+  <%= @meeting.end_time %>
+</p>
+<%= link_to "Edit",edit_meeting_path, class: "btn btn-primary" %>
+<%= link_to "Back",new_meeting_path, class: "btn btn-primary" %>
+
+</div>
+</div>

@@ -1,0 +1,33 @@
+<h3 style="text-align: center;">Welcome Dr.<%= current_user.email.split('@')[0].capitalize %></h3>
+<div class="container-sm">
+<div class="modal-body row">
+	<div class="col-md-7">
+		<h1 style="text-align: center">Already Existing Patients</h1>
+			<table class="table table-bordered table-hover" style="text-align: center;">
+  			<thead class="thead-dark" >
+    			<tr>
+      			<th style="text-align: center;">Name</th>
+      			<th style="text-align: center;">Age</th>
+      			<th style="text-align: center;">E-Mail</th>
+      			<th style="text-align: center;">Date</th>
+    			</tr>
+  			</thead>
+			<tbody>
+    			<% @user_patient.each do |p| %>
+      		<tr>
+        			<td><%= p.name %></td>
+        			<td><%= p.age %></td>
+        			<td><%= p.email %></td>
+        			<td><%= p.date %></td>
+     			</tr>
+    			<% end %>
+  			</tbody>
+			</table>
+	</div>
+	<div class="col-md-5">
+		<h1 style="text-align: center">Enter the Details of the New Patient</h1>
+		<%= render 'form', patient: @patient %>
+		<%= link_to 'Back', patients_path,class: "btn btn-default" %>
+	</div>
+</div>
+</div>
