@@ -2,15 +2,11 @@
 <html>
 <head>
   <style>
-    .dropdown-menu 
-  {
-    width: 200px !important;
-    text-align: center;
-  }
+  
   </style>
 </head>
 <body>
-  <div class="row">
+  <div class="row" style="padding-top: 10px;">
     <div class="col-xs-1">
           <%= link_to 'New Patient',new_patient_path,class: "btn btn-default" %>
     </div>
@@ -68,7 +64,7 @@
 </div>
 <div class="col-md-12" style="text-align: center;">
     <%= search_form_for @search do |f| %>
-    <%= f.text_field :name_or_details_or_email_or_address_or_age_cont, class: 'form',placeholder: "Name/details/email/address" %></br>
+    <%= f.text_field :name_or_details_or_email_or_address_or_age_cont, class: 'form-control center-block',placeholder: "Name/details/email/address" %>
     <%= link_to "Clear", request.path, class: "btn btn-default" %>
     <%= f.submit class: 'btn btn-primary', style: "margin-left : 3px"%>
     <% end %>

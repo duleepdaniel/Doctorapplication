@@ -44871,3 +44871,2920 @@ DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please us
 Completed 200 OK in 88ms (Views: 71.7ms | ActiveRecord: 8.3ms)
 
 
+Started GET "/" for ::1 at 2020-06-25 18:47:05 +0530
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by PatientsController#new as HTML
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 18:47:05 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 1141ms (Views: 1076.5ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 18:52:35 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 64ms (Views: 61.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-06-25 18:52:40 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IcxoufbOni91dhXUoMTsLC9xKD7thG72EuOJL5IaDzUB35gdVrlv6VU0Vh8Cp0XxHqrK0rcgqY6G9y1ZJUdqTQ==", "user"=>{"email"=>"t1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (106.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "t1@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 446ms (ActiveRecord: 107.2ms)
+
+
+Started GET "/" for ::1 at 2020-06-25 18:52:40 +0530
+Processing by PatientsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering patients/new.html.erb within layouts/application
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/new.html.erb:16
+  Rendered patients/_form.html.erb (6.2ms)
+  Rendered patients/new.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 98ms (Views: 64.9ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 18:52:44 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:48
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:67
+  Rendered patients/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 71ms (Views: 63.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/meetings/new" for ::1 at 2020-06-25 18:52:55 +0530
+Processing by MeetingsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering meetings/new.html.erb within layouts/application
+  [1m[36mMeeting Load (0.7ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/new.html.erb:8
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/new.html.erb:12
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/meetings/new.html.erb:12
+  Rendered simple_calendar/_month_calendar.html.erb (12.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "patients"."id" FROM "patients"[0m
+  ↳ app/views/meetings/_form.html.erb:31
+  Rendered meetings/_form.html.erb (7.1ms)
+  Rendered meetings/new.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 87ms (Views: 66.8ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 18:53:02 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.9ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:48
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:67
+  Rendered patients/index.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 145ms (Views: 127.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 18:53:04 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:48
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:67
+  Rendered patients/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 103ms (Views: 96.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 18:53:06 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:48
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:67
+  Rendered patients/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 112ms (Views: 104.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/patients/new" for ::1 at 2020-06-25 18:53:08 +0530
+Processing by PatientsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering patients/new.html.erb within layouts/application
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/new.html.erb:16
+  Rendered patients/_form.html.erb (15.3ms)
+  Rendered patients/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 75ms (Views: 70.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 18:53:09 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.8ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:48
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:67
+  Rendered patients/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 121ms (Views: 108.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 18:58:00 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.7ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:48
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:67
+  Rendered patients/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 84ms (Views: 76.1ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-06-25 19:00:36 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XSXPRSZCIonrQ7MQi1RUT6/Mkfij9kUHbyKHa5Iukj6qrBxHF82+1TOXtt3Z93t1JhbGYg129fQFOo+zGU8TmQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-06-25 19:00:36 +0530
+Processing by PatientsController#new as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:00:36 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 74ms (Views: 73.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:00:38 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 92ms (Views: 90.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:00:42 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 159ms (Views: 156.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:01:00 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 75ms (Views: 71.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 19:01:02 +0530
+Processing by PatientsController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:01:02 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 58ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:01:15 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:04:40 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 58ms (Views: 55.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:06:54 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.5ms)
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 112ms (Views: 109.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:08:22 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.3ms)
+  Rendered devise/shared/_links.html.erb (2.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 144ms (Views: 141.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:09:28 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.9ms)
+  Rendered devise/shared/_links.html.erb (6.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 152ms (Views: 146.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:09:54 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 70ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:10:28 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (4.1ms)
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 149ms (Views: 147.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:11:25 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (3.5ms)
+  Rendered devise/shared/_links.html.erb (4.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 180ms (Views: 176.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:11:35 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 71ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:12:18 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.2ms)
+  Rendered devise/shared/_links.html.erb (5.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 155ms (Views: 153.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:12:31 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 74ms (Views: 73.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:12:54 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.4ms)
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 97ms (Views: 95.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:13:17 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/duleep/simple1/app/views/devise/registrations/new.html.erb:24: syntax error, unexpected ','
+... autocomplete: "new-password",,placeholder: "Re-Enter the Pa...
+...                              ^
+/home/duleep/simple1/app/views/devise/registrations/new.html.erb:24: syntax error, unexpected ',', expecting ')'
+...older: "Re-Enter the Password",class: "form-control text-cen...
+...                              ^):
+  
+app/views/devise/registrations/new.html.erb:24: syntax error, unexpected ','
+app/views/devise/registrations/new.html.erb:24: syntax error, unexpected ',', expecting ')'
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:13:26 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 85ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:13:49 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/duleep/simple1/app/views/devise/registrations/new.html.erb:28: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+...n up", class"btn btn-primary" );@output_buffer.safe_append='
+...                              ^
+/home/duleep/simple1/app/views/devise/registrations/new.html.erb:30: syntax error, unexpected end, expecting ')'
+'.freeze;     end 
+              ^~~
+/home/duleep/simple1/app/views/devise/registrations/new.html.erb:39: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/duleep/simple1/app/views/devise/registrations/new.html.erb:41: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/devise/registrations/new.html.erb:28: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/devise/registrations/new.html.erb:30: syntax error, unexpected end, expecting ')'
+app/views/devise/registrations/new.html.erb:39: syntax error, unexpected ensure, expecting ')'
+app/views/devise/registrations/new.html.erb:41: syntax error, unexpected end, expecting ')'
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:13:55 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 95ms (Views: 94.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:14:29 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.5ms)
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 93ms (Views: 90.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:14:44 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.8ms)
+  Rendered devise/shared/_links.html.erb (4.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 102ms (Views: 99.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:14:51 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 79ms (Views: 78.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:15:31 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.2ms)
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 123ms (Views: 120.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:15:42 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 135ms (Views: 132.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:16:31 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 139ms (Views: 133.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:18:00 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2434.2ms)
+Completed 200 OK in 2632ms (Views: 2628.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:18:20 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 111ms (Views: 110.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:18:37 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 85ms (Views: 83.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:18:59 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 169ms (Views: 166.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:19:15 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 83ms (Views: 81.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:19:30 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 168ms (Views: 167.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:19:55 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 113ms (Views: 110.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:20:37 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (8.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 222ms (Views: 217.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:21:00 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 114ms (Views: 111.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:21:09 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 74ms (Views: 72.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:21:16 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 79ms (Views: 77.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:21:33 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 132ms (Views: 130.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:21:58 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 73ms (Views: 72.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:21:58 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 62ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:21:59 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 82ms (Views: 79.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:22:34 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (6.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 137ms (Views: 135.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:22:44 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 153ms (Views: 151.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:22:57 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 125ms (Views: 121.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:23:01 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 114ms (Views: 112.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:23:10 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 138ms (Views: 133.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:23:24 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.9ms)
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 61ms (Views: 54.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:23:44 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (3.1ms)
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 67ms (Views: 66.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:24:04 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (3.5ms)
+  Rendered devise/shared/_links.html.erb (6.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 152ms (Views: 148.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:24:16 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_links.html.erb (6.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 118ms (Views: 117.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 19:24:39 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (3.4ms)
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 107ms (Views: 103.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:24:49 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 114ms (Views: 111.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:25:05 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/duleep/simple1/app/views/devise/sessions/new.html.erb:33: syntax error, unexpected class, expecting ')'
+...ppend=( f.submit "Log in" class: "btn btn-primary" );@output...
+...                          ^~~~~):
+  
+app/views/devise/sessions/new.html.erb:33: syntax error, unexpected class, expecting ')'
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:25:13 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 115ms (Views: 113.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 19:26:22 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (8.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 127ms (Views: 124.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2020-06-25 19:26:24 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/home" for ::1 at 2020-06-25 21:13:06 +0530
+  
+SyntaxError (/home/duleep/simple1/config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+  get '/home' to 'home.html.erb'
+              ^~
+/home/duleep/simple1/config/routes.rb:8: syntax error, unexpected end, expecting end-of-input):
+  
+config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+config/routes.rb:8: syntax error, unexpected end, expecting end-of-input
+Started GET "/home" for ::1 at 2020-06-25 21:13:17 +0530
+  
+SyntaxError (/home/duleep/simple1/config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+  get '/home' to: 'home.html.erb'
+              ^~):
+  
+config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/home" for ::1 at 2020-06-25 21:14:42 +0530
+  
+SyntaxError (/home/duleep/simple1/config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+  get '/footer' to: 'application#footer'
+                ^~):
+  
+config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/home" for ::1 at 2020-06-25 21:16:17 +0530
+  
+SyntaxError (/home/duleep/simple1/config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+  get 'application/footer' to: 'application#footer'
+                           ^~):
+  
+config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/home" for ::1 at 2020-06-25 21:16:25 +0530
+  
+SyntaxError (/home/duleep/simple1/config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+  get 'footer' to: 'application#footer'
+               ^~):
+  
+config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/home" for ::1 at 2020-06-25 21:18:37 +0530
+  
+SyntaxError (/home/duleep/simple1/config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+  get 'footer' to: 'contact#footer'
+               ^~):
+  
+config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/" for ::1 at 2020-06-25 21:18:40 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-06-25 21:18:55 +0530
+  
+SyntaxError (/home/duleep/simple1/config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+  get '/footer' to: 'contact#footer'
+                ^~):
+  
+config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/" for ::1 at 2020-06-25 21:19:29 +0530
+  
+SyntaxError (/home/duleep/simple1/config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+  get 'footer' to: 'contact#footer'
+               ^~):
+  
+config/routes.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/" for ::1 at 2020-06-25 21:19:40 +0530
+Processing by PatientsController#new as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:19:40 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 1867ms (Views: 1831.5ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:19:49 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 67ms (Views: 65.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:20:38 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 113ms (Views: 85.5ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:20:52 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (63.9ms)
+Completed 200 OK in 135ms (Views: 132.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/f" for ::1 at 2020-06-25 21:20:54 +0530
+Processing by ApplicationController#f as HTML
+Completed 406 Not Acceptable in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (ApplicationController#f is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.4.3) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.4.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.4.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.4.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/f" for ::1 at 2020-06-25 21:21:09 +0530
+Processing by ApplicationController#f as HTML
+Completed 406 Not Acceptable in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (ApplicationController#f is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.4.3) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.4.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.4.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.4.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-06-25 21:21:13 +0530
+Processing by PatientsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:21:13 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (6.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 185ms (Views: 180.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:21:14 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 75ms (Views: 73.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:21:46 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 125ms (Views: 106.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:22:19 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 130ms (Views: 97.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:22:40 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 154ms (Views: 152.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:22:53 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (6.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 127ms (Views: 125.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:23:00 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 112ms (Views: 108.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:23:11 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 98ms (Views: 97.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:23:14 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 54ms (Views: 53.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:23:35 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 134ms (Views: 131.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 21:23:43 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:23:48 +0530
+Processing by PatientsController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:23:48 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 65ms (Views: 63.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:23:51 +0530
+Processing by PatientsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:23:51 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 107ms (Views: 106.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:24:31 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 103ms (Views: 101.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:24:34 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 177ms (Views: 174.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-06-25 21:24:42 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qocvvijgJ32w4bIUIfg88OpnErLVJ1yQNOGDhD/uPIsn9KkDViiTj66meqCuaeNJ+7196zEz4KfPCCI3aPuH4g==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qocvvijgJ32w4bIUIfg88OpnErLVJ1yQNOGDhD/uPIsn9KkDViiTj66meqCuaeNJ+7196zEz4KfPCCI3aPuH4g==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 145ms (Views: 142.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:24:45 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 111ms (Views: 108.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-06-25 21:24:54 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ceZ91JFbakmvDOR9Bvwhs6CDj1odHk2urNwexq+CbFT8lftp75Peu7FLLMmJbf4KsVngA/kK8ZlXNb91+JfXPQ==", "user"=>{"email"=>"t1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (15.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "t1@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/patients
+Completed 302 Found in 320ms (ActiveRecord: 15.3ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:24:54 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:48
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:67
+  Rendered patients/index.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 175ms (Views: 114.3ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:24:57 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:48
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:67
+  Rendered patients/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 108ms (Views: 103.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:26:39 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 161ms (Views: 146.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:27:00 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 67ms (Views: 64.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/meetings" for ::1 at 2020-06-25 21:27:03 +0530
+Processing by MeetingsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/meetings_controller.rb:9)
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.4ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/meetings/index.html.erb:28
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  Rendered meetings/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 72ms (Views: 60.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:27:08 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 61ms (Views: 52.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:27:22 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (4.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 98ms (Views: 85.7ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:27:25 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:74
+Completed 200 OK in 70ms (Views: 68.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:28:40 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:74
+Completed 200 OK in 94ms (Views: 88.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:29:58 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 157ms (Views: 153.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:30:12 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 94ms (Views: 92.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:30:21 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 100ms (Views: 94.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:30:28 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 90ms (Views: 89.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:30:59 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 130ms (Views: 128.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:31:08 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 130ms (Views: 126.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:31:21 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 159ms (Views: 156.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:31:34 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 67ms (Views: 63.4ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-06-25 21:31:45 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/t3Zd3sErZKk0fW2K4xVdn2wza2Oj6vDqL5lECjUeEJ4YpB6/C6+zWLdD8Mn3l4bMrrkRa1dvf/26S54jr6KsQ=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-06-25 21:31:45 +0530
+Processing by PatientsController#new as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:31:45 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 136ms (Views: 133.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 21:32:07 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 79ms (Views: 77.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-06-25 21:32:11 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Zc8sQ4vfIyVotiaraTB/H39W5K3anu7udx1ah/TBL28hfSjXoKzF2JPrfLwwnQOFnqyQlgFOvdp07NTy2McwA==", "user"=>{"email"=>"t1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "t1@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 301ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-06-25 21:32:11 +0530
+Processing by PatientsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering patients/new.html.erb within layouts/application
+  [1m[36mPatient Load (1.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/new.html.erb:16
+  Rendered patients/_form.html.erb (7.7ms)
+  Rendered patients/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 92ms (Views: 85.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:32:13 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 85ms (Views: 75.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:32:15 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 54ms (Views: 52.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:34:51 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 125ms (Views: 123.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:35:03 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 90ms (Views: 89.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:36:50 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (17.2ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 130ms (Views: 127.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:37:09 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (8.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 88ms (Views: 85.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:37:29 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (14.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 125ms (Views: 123.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:37:41 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 98ms (Views: 94.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:37:53 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (16.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 184ms (Views: 177.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:38:17 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 132ms (Views: 130.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:45:56 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (10.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 86ms (Views: 82.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:46:06 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (9.7ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 93ms (Views: 88.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:46:33 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 67ms (Views: 64.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:46:34 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 59ms (Views: 57.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:46:34 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (15.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 112ms (Views: 109.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:46:43 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (6.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 110ms (Views: 109.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:46:55 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 61ms (Views: 60.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:47:24 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (14.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 151ms (Views: 146.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:47:44 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 64ms (Views: 62.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:48:00 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (17.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 134ms (Views: 130.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:48:45 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (13.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 142ms (Views: 139.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:48:59 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (16.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 124ms (Views: 122.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:50:01 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (15.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 69ms (Views: 67.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:50:02 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (21.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 146ms (Views: 143.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:50:09 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 87ms (Views: 85.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:50:26 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (15.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 144ms (Views: 137.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:51:39 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 95ms (Views: 94.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:51:51 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (15.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 116ms (Views: 111.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:52:30 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 64ms (Views: 63.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:52:47 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (13.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 142ms (Views: 138.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:52:59 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.7ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 70ms (Views: 61.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:53:01 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (17.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 86ms (Views: 84.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/footer" for ::1 at 2020-06-25 21:53:41 +0530
+Processing by ContactController#footer as HTML
+  Rendering contact/footer.html.erb within layouts/application
+  Rendered contact/footer.html.erb within layouts/application (16.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:77
+Completed 200 OK in 126ms (Views: 120.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:54:06 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 61ms (Views: 53.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:54:53 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 184ms (Views: 170.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:55:39 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 133ms (Views: 110.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:55:53 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 117ms (Views: 103.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:57:03 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (42.4ms)
+Completed 200 OK in 199ms (Views: 184.6ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:57:38 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 94ms (Views: 89.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:57:55 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 134ms (Views: 130.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:58:42 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (45.6ms)
+Completed 200 OK in 129ms (Views: 116.3ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:59:04 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 149ms (Views: 133.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/meetings" for ::1 at 2020-06-25 21:59:10 +0530
+Processing by MeetingsController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/meetings_controller.rb:9)
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.6ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/meetings/index.html.erb:28
+  [1m[36mPatient Load (4.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  [1m[36mPatient Load (4.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  Rendered meetings/index.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 260ms (Views: 229.1ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 21:59:22 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 100ms (Views: 89.8ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:01:04 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (2.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 204ms (Views: 184.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:01:33 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.7ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 131ms (Views: 118.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:02:18 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 96ms (Views: 79.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:03:02 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.7ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 190ms (Views: 176.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:03:24 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (2.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 103ms (Views: 96.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:03:28 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 133ms (Views: 126.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:03:54 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.5ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 117ms (Views: 103.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:05:05 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.8ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (50.9ms)
+Completed 200 OK in 199ms (Views: 179.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:05:14 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (2.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 167ms (Views: 152.1ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:05:24 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.9ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 169ms (Views: 147.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/meetings" for ::1 at 2020-06-25 22:05:52 +0530
+Processing by MeetingsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/meetings_controller.rb:9)
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (1.5ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/meetings/index.html.erb:28
+  [1m[36mPatient Load (0.9ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  [1m[36mPatient Load (0.8ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  Rendered meetings/index.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 98ms (Views: 80.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/meetings" for ::1 at 2020-06-25 22:05:59 +0530
+Processing by MeetingsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/meetings_controller.rb:9)
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (1.5ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/meetings/index.html.erb:28
+  [1m[36mPatient Load (1.6ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  [1m[36mPatient Load (1.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  Rendered meetings/index.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 154ms (Views: 136.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/meetings?utf8=%E2%9C%93&q%5Bname_cont%5D=cardio&commit=Search" for ::1 at 2020-06-25 22:06:02 +0530
+Processing by MeetingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"name_cont"=>"cardio"}, "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/meetings_controller.rb:9)
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (17.3ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."user_id" = $1 AND "meetings"."name" ILIKE '%cardio%' LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/meetings/index.html.erb:28
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  Rendered meetings/index.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 128ms (Views: 100.5ms | ActiveRecord: 21.3ms)
+
+
+Started GET "/meetings" for ::1 at 2020-06-25 22:06:04 +0530
+Processing by MeetingsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/meetings_controller.rb:9)
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.5ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/meetings/index.html.erb:28
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  [1m[36mPatient Load (1.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  Rendered meetings/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 87ms (Views: 73.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:06:06 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 60ms (Views: 53.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:07:06 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.6ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 189ms (Views: 169.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:07:18 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (41.7ms)
+Completed 200 OK in 120ms (Views: 111.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:07:58 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 147ms (Views: 129.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:08:01 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.9ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 77ms (Views: 69.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/patients/new" for ::1 at 2020-06-25 22:08:05 +0530
+Processing by PatientsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering patients/new.html.erb within layouts/application
+  [1m[36mPatient Load (0.7ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/new.html.erb:16
+  Rendered patients/_form.html.erb (10.2ms)
+  Rendered patients/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 100ms (Views: 92.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:08:07 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 146ms (Views: 117.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:08:33 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.8ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 82ms (Views: 76.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:08:44 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 122ms (Views: 114.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:08:47 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 74ms (Views: 67.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:08:59 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 97ms (Views: 90.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:12:12 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 75ms (Views: 68.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:13:01 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 111ms (Views: 99.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:13:55 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 123ms (Views: 116.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:14:27 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 145ms (Views: 98.1ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/patients?page=2" for ::1 at 2020-06-25 22:14:29 +0530
+Processing by PatientsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/patients/index.html.erb:44
+  Rendered patients/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 75ms (Views: 70.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/patients?page=1" for ::1 at 2020-06-25 22:14:31 +0530
+Processing by PatientsController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 108ms (Views: 96.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:14:36 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.9ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 112ms (Views: 96.1ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-06-25 22:14:43 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Vz4ukWbgtty0xIm9LMzhAtwTTEMeRv9D1wlkMjvu895nmieP1u2saU0F6sXoh98tT0gDEc0HiS0XaeWPiFRICg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-06-25 22:14:43 +0530
+Processing by PatientsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 22:14:43 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 130ms (Views: 126.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 22:14:45 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 99ms (Views: 97.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 22:15:09 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 88ms (Views: 84.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-06-25 22:15:21 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ie+iuUM1fpTCPGpJx9WjtHbMsSg2aenQk3pT+AxtOuS42If1zy0v3tBHDhi4pqbltenUxgLqwaz56PUFRgLE9A==", "user"=>{"email"=>"t1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "t1@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 319ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-06-25 22:15:21 +0530
+Processing by PatientsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering patients/new.html.erb within layouts/application
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/new.html.erb:16
+  Rendered patients/_form.html.erb (6.3ms)
+  Rendered patients/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 98ms (Views: 93.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:15:26 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 84ms (Views: 72.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/meetings/new" for ::1 at 2020-06-25 22:15:30 +0530
+Processing by MeetingsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering meetings/new.html.erb within layouts/application
+  [1m[36mMeeting Load (0.3ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/new.html.erb:8
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/new.html.erb:12
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/meetings/new.html.erb:12
+  Rendered simple_calendar/_month_calendar.html.erb (7.4ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "patients"."id" FROM "patients"[0m
+  ↳ app/views/meetings/_form.html.erb:31
+  Rendered meetings/_form.html.erb (6.8ms)
+  Rendered meetings/new.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 69ms (Views: 48.9ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:15:47 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 111ms (Views: 105.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/patients?page=2" for ::1 at 2020-06-25 22:16:02 +0530
+Processing by PatientsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.9ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/patients/index.html.erb:44
+  Rendered patients/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 63ms (Views: 54.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/patients?page=1" for ::1 at 2020-06-25 22:16:04 +0530
+Processing by PatientsController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 62ms (Views: 51.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/patients?page=1&q%5Bs%5D=email+asc" for ::1 at 2020-06-25 22:16:10 +0530
+Processing by PatientsController#index as HTML
+  Parameters: {"page"=>"1", "q"=>{"s"=>"email asc"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 ORDER BY "patients"."email" ASC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 76ms (Views: 68.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/patients?page=1&q%5Bs%5D=email+desc" for ::1 at 2020-06-25 22:16:10 +0530
+Processing by PatientsController#index as HTML
+  Parameters: {"page"=>"1", "q"=>{"s"=>"email desc"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 ORDER BY "patients"."email" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 99ms (Views: 86.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/patients?page=1&q%5Bs%5D=id+asc" for ::1 at 2020-06-25 22:16:13 +0530
+Processing by PatientsController#index as HTML
+  Parameters: {"page"=>"1", "q"=>{"s"=>"id asc"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 ORDER BY "patients"."id" ASC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 58ms (Views: 50.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/patients?page=1&q%5Bs%5D=id+desc" for ::1 at 2020-06-25 22:16:14 +0530
+Processing by PatientsController#index as HTML
+  Parameters: {"page"=>"1", "q"=>{"s"=>"id desc"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.8ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 ORDER BY "patients"."id" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 86ms (Views: 80.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/patients?page=1&q%5Bs%5D=id+asc" for ::1 at 2020-06-25 22:16:15 +0530
+Processing by PatientsController#index as HTML
+  Parameters: {"page"=>"1", "q"=>{"s"=>"id asc"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (3.8ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 ORDER BY "patients"."id" ASC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 89ms (Views: 68.2ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:17:06 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.9ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 105ms (Views: 83.2ms | ActiveRecord: 6.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-06-25 22:17:15 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"35tz7ID/JPSlG9iGmEEL4Llrzu1mjcno043luhb2WhH/UEaSW4EPluNfqwX9tgc7DhbeiKzk6ayMoau5twC8ZA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-06-25 22:17:15 +0530
+Processing by PatientsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 22:17:15 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 89ms (Views: 87.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 22:17:18 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 120ms (Views: 117.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 22:17:28 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 47ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 22:18:02 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (4.4ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 130ms (Views: 126.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 22:18:38 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 83ms (Views: 79.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-25 22:18:46 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.4ms)
+  Rendered devise/shared/_links.html.erb (7.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 147ms (Views: 143.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:18:49 +0530
+Processing by PatientsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 22:18:49 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 78ms (Views: 75.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:18:51 +0530
+Processing by PatientsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 22:18:51 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 75ms (Views: 72.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 22:18:53 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 108ms (Views: 105.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 22:19:13 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 191ms (Views: 189.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 22:19:28 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 105ms (Views: 102.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-06-25 22:19:49 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tLf8dipdZzJAlTkxKJ3trBAAfghi6mIk84oBFtPCRwa2nSU2ckd5NGQUqelsttASmQN3BZHIcXch9cDjDHV/NQ==", "user"=>{"email"=>"t1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "t1@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/patients
+Completed 302 Found in 306ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:19:50 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 108ms (Views: 101.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:19:52 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 106ms (Views: 100.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/patients?page=2" for ::1 at 2020-06-25 22:20:07 +0530
+Processing by PatientsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.9ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/patients/index.html.erb:44
+  Rendered patients/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 68ms (Views: 63.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/patients?page=1" for ::1 at 2020-06-25 22:20:09 +0530
+Processing by PatientsController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.9ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 63ms (Views: 55.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/meetings/new" for ::1 at 2020-06-25 22:20:13 +0530
+Processing by MeetingsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering meetings/new.html.erb within layouts/application
+  [1m[36mMeeting Load (0.4ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/new.html.erb:8
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/new.html.erb:12
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/meetings/new.html.erb:12
+  Rendered simple_calendar/_month_calendar.html.erb (15.7ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "patients"."id" FROM "patients"[0m
+  ↳ app/views/meetings/_form.html.erb:31
+  Rendered meetings/_form.html.erb (22.4ms)
+  Rendered meetings/new.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 82ms (Views: 75.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/meetings/new" for ::1 at 2020-06-25 22:20:47 +0530
+Processing by MeetingsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering meetings/new.html.erb within layouts/application
+  [1m[36mMeeting Load (2.8ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/new.html.erb:8
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/new.html.erb:12
+  [1m[36mPatient Load (2.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/meetings/new.html.erb:12
+  Rendered simple_calendar/_month_calendar.html.erb (39.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "patients"."id" FROM "patients"[0m
+  ↳ app/views/meetings/_form.html.erb:31
+  Rendered meetings/_form.html.erb (6.4ms)
+  Rendered meetings/new.html.erb within layouts/application (71.0ms)
+Completed 200 OK in 149ms (Views: 135.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/meetings/new" for ::1 at 2020-06-25 22:21:09 +0530
+Processing by MeetingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering meetings/new.html.erb within layouts/application
+  [1m[36mMeeting Load (0.4ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/new.html.erb:8
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/new.html.erb:12
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/meetings/new.html.erb:12
+  Rendered simple_calendar/_month_calendar.html.erb (15.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "patients"."id" FROM "patients"[0m
+  ↳ app/views/meetings/_form.html.erb:31
+  Rendered meetings/_form.html.erb (16.7ms)
+  Rendered meetings/new.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 147ms (Views: 140.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/meetings/new" for ::1 at 2020-06-25 22:21:11 +0530
+Processing by MeetingsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering meetings/new.html.erb within layouts/application
+  [1m[36mMeeting Load (0.5ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/new.html.erb:8
+  [1m[36mPatient Load (0.8ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/new.html.erb:12
+  [1m[36mPatient Load (0.7ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/meetings/new.html.erb:12
+  Rendered simple_calendar/_month_calendar.html.erb (19.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "patients"."id" FROM "patients"[0m
+  ↳ app/views/meetings/_form.html.erb:31
+  Rendered meetings/_form.html.erb (11.8ms)
+  Rendered meetings/new.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 116ms (Views: 108.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/meetings/new" for ::1 at 2020-06-25 22:21:29 +0530
+Processing by MeetingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering meetings/new.html.erb within layouts/application
+  [1m[36mMeeting Load (0.2ms)[0m  [1m[34mSELECT "meetings".* FROM "meetings"[0m
+  ↳ app/views/meetings/new.html.erb:8
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/new.html.erb:12
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/meetings/new.html.erb:12
+  Rendered simple_calendar/_month_calendar.html.erb (6.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "patients"."id" FROM "patients"[0m
+  ↳ app/views/meetings/_form.html.erb:31
+  Rendered meetings/_form.html.erb (27.2ms)
+  Rendered meetings/new.html.erb within layouts/application (36.1ms)
+Completed 200 OK in 118ms (Views: 114.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/meetings" for ::1 at 2020-06-25 22:21:33 +0530
+Processing by MeetingsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/meetings_controller.rb:9)
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.7ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/meetings/index.html.erb:28
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  Rendered meetings/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 89ms (Views: 74.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/meetings/1/edit" for ::1 at 2020-06-25 22:21:35 +0530
+Processing by MeetingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMeeting Load (0.8ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meetings_controller.rb:71
+  Rendering meetings/edit.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "patients"."id" FROM "patients"[0m
+  ↳ app/views/meetings/_form.html.erb:31
+  Rendered meetings/_form.html.erb (21.3ms)
+  Rendered meetings/edit.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 81ms (Views: 63.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/meetings/1/edit" for ::1 at 2020-06-25 22:21:46 +0530
+Processing by MeetingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMeeting Load (1.2ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meetings_controller.rb:71
+  Rendering meetings/edit.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "patients"."id" FROM "patients"[0m
+  ↳ app/views/meetings/_form.html.erb:31
+  Rendered meetings/_form.html.erb (26.1ms)
+  Rendered meetings/edit.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 140ms (Views: 122.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/meetings" for ::1 at 2020-06-25 22:21:50 +0530
+Processing by MeetingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/meetings_controller.rb:9)
+  Rendering meetings/index.html.erb within layouts/application
+  [1m[36mMeeting Load (0.4ms)[0m  [1m[34mSELECT  "meetings".* FROM "meetings" WHERE "meetings"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/meetings/index.html.erb:28
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/meetings/index.html.erb:30
+  Rendered meetings/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 61ms (Views: 54.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/patients" for ::1 at 2020-06-25 22:21:53 +0530
+Processing by PatientsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/duleep/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/duleep/simple1/app/controllers/patients_controller.rb:5)
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/patients/index.html.erb:44
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "patients" WHERE "patients"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/patients/index.html.erb:63
+  Rendered patients/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 69ms (Views: 57.3ms | ActiveRecord: 2.9ms)
+
+

@@ -16,14 +16,14 @@
           width: 100%;
           bottom:0;
       }
-  .navbar 
-  {
+    .navbar 
+    {
     -webkit-box-shadow: 0 8px 6px -6px #999;
     -moz-box-shadow: 0 8px 6px -6px #999;
     box-shadow: 0 8px 6px -6px #999;
-  }
-  .dropdown-menu 
-  {
+    }
+    .dropdown-menu 
+    {
     width: 100px !important;
     text-align: center;
   }
@@ -32,30 +32,62 @@
   line-height:30px;
   padding:0px 15px;
   text-align: center;
-}
+  }
 .row{
   margin-right:0 !important;
 }
-.signinpage{ text-align: center; padding-top: 300px;
-  background-image: url"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fmedical-background&psig=AOvVaw2W4RLwfMQ1Dt9GpjeXVng-&ust=1592980684027000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDbs8ipl-oCFQAAAAAdAAAAABAD";
-  background-repeat: no-repeat;
-  background-position: center;
-    background-size: contain;
+
+  .vfill{
+    height: 100%;min-height: 100vh;
+    padding-top: 50px;
   }
+
+  .modal-body.row{
+    padding-top: 0;
+  }
+  .navbar{
+    margin-bottom: 0;
+  }
+  .form-control{
+    width: 500px;
+    text-align: center;
+  }
+  .alert.alert-danger{
+    margin: 0;
+  }
+    .dropdown-menu 
+  {
+    width: 200px !important;
+    text-align: center;
+  }
+  .jumbotron {
+   vertical-align: middle;
+ }
+ .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: rgb(70,88,127);
+  color: white;
+  font-weight: 700;
+}
+.img:hover{
+  transform: scale(1.1);
+}
+.toggle:hover{
+ transform: scale(1.1); 
+}
     </style>
+  
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/patients">
-        <img src="https://d2i6vk5bmh3r0a.cloudfront.net/images_2_0/assets/svg/invis_logo_black-f6c4c07a1c4fd883eaa7700fa407c0b1eee748ec5e39566d4526419a4d72a89a.svg" style="width: 150px">
+        <a class="navbar-brand img" href="/patients">
+        <img src="https://d2i6vk5bmh3r0a.cloudfront.net/images_2_0/assets/svg/invis_logo_black-f6c4c07a1c4fd883eaa7700fa407c0b1eee748ec5e39566d4526419a4d72a89a.svg" style="width: 120px">
         </a>
-
       </div>
       <% if user_signed_in? %>
       <div class="nav navbar-right">
         <div class="dropdown">
-          <button type="button" class="btn btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin: 10px"><span class="glyphicon glyphicon-th"></span></button>
+          <button type="button" class="btn btn-success toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin: 10px"><span class="glyphicon glyphicon-th"></span></button>
               <ul class="dropdown-menu">
                 <li><a href="#">
                     <%= link_to('Log Out',destroy_user_session_path, :method => :delete) %>
@@ -73,7 +105,7 @@
       <%= yield %>
     </div>
       <div class="footer">
-        <h4>Contact for any issues</h4>
+        <a href="/footer" style="color: white"><h4>Contact us for any Issues</h4></a>
       </div>
   </body>
 </html>

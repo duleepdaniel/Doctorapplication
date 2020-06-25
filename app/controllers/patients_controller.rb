@@ -4,9 +4,9 @@ class PatientsController < ApplicationController
 	def index
 		@search= current_user.patients.search(params[:q])
 		if @search.result
-			@patients=@search.result.paginate(:page => params[:page],:per_page => 5)
+			@patients=@search.result.paginate(:page => params[:page],:per_page => 4)
 		else
-			@patients=current_user.patients.order("created_at DESC").paginate(:page => params[:page],:per_page => 5)
+			@patients=current_user.patients.order("created_at DESC").paginate(:page => params[:page],:per_page => 4)
 		end
 	end
 
