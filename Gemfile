@@ -3,11 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 gem 'devise'
-gem 'bootstrap-sass', '~> 3.4.1'
+#BootStrap -- dependencies
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
+#Ransack for Sorting
 gem 'ransack'
+#will_paginate for pagination
 gem 'will_paginate', '~> 3.1.0' 
+#for meetings
+gem "simple_calendar", "~> 2.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 # Use postgresql as the database for Active Record
@@ -41,7 +45,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.3.1'
-
+gem "rack", ">= 2.2.3"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
