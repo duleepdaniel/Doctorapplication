@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-	#after_create :assign_default_role
+	after_create :assign_default_role
 	rolify
   	# Include default devise modules. Others available are:
   	# :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -10,9 +10,9 @@ class User < ApplicationRecord
   	has_many :meetings
     #attr_accessible :role_ids
 
-  	#def assign_default_role
-    #    add_role(:doctor)  
-  	#end
+  	def assign_default_role
+      self.add_role(:doctor) if self.roles.blank?
+  	end
 
 
 end
