@@ -20,8 +20,12 @@
   <strong>end_Time:</strong>
   <%= @meeting.end_time %>
 </p>
-<%= link_to "Edit",edit_meeting_path, class: "btn btn-primary" %>
-<%= link_to "Back",new_meeting_path, class: "btn btn-primary" %>
+<% unless current_user.has_role? :nurse %>
+  <div class="container">
+  <%= link_to "Edit",edit_meeting_path, class: "btn btn-primary" %>
+  <%= link_to "Back",new_meeting_path, class: "btn btn-primary" %>
+  </div>
+<% end %>
 
 </div>
 </div>

@@ -28,10 +28,10 @@
   
   <div class="form-group">
     <%= form.label "patient-ID" %>
-    <%= form.select(:patient_id, Patient.all.pluck(:id),class: "form-control")%>
+    <%= form.select(:patient_id, current_user.patients.all.pluck(:id),class: "form-control")%>
   </div>
 
   <div class="actions">
-    <%= form.submit class: "btn btn-primary" %>
+    <%= form.submit  class: "btn btn-primary" %>
   </div>
 <% end %>

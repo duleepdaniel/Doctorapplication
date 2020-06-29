@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-  
-  </style>
 </head>
 <body>
-  <div class="row" style="padding-top: 10px;">
+  <div class="row pd-t-10">
+
     <div class="col-xs-1">
           <%= link_to 'New Patient',new_patient_path,class: "btn btn-default" %>
     </div>
@@ -14,7 +12,7 @@
         <div class="dropdown">
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Appointments</button>
           <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenuButton">
-            <li><a href="#"><%= link_to('Schedule an Appointment',new_meeting_path) %></a></li>
+            <li><a href="#"><%= link_to('Schedule an Appointment',new_meeting_path) %></a></li>  
             <li><a href="#"><%= link_to('View all Appointments',meetings_path) %></a></li>
           </ul>
         </div>
@@ -22,21 +20,22 @@
   </ul>
 </div>
 </div>
+  <% if has_role?(:admin) %>
+    <h1 class="text-center">Admin :All the Existing Patients</h1>  
+  <% elsif has_role?(:doctor) %>
+    <h1 class="text-center">All the Patients of Dr.<%= current_user.email.split('@')[0].capitalize %></h1>
+  <% end %>
 
-<h1 style="text-align: center;">All the Patients of Dr.<%= current_user.email.split('@')[0].capitalize %></h1>
-
-
-
-<table class="table table-hover table-striped" style="text-align: center;">
+<table class="table table-hover table-striped text-center">
   <thead>
     <tr>
-      <th class="col-xs-1" style="text-align: center"><%= sort_link @search, :id, "Patient_ID"%></th>
-      <th class="col-xs-1" style="text-align: center"><%= sort_link @search, :Name, "Name"%></th>
-      <th class="col-xs-1" style="text-align: center"><%= sort_link @search, :age, "Age"%></th>
-      <th class="col-xs-2" style="text-align: center"><%= sort_link @search, :email, "E-mail"%></th>
-      <th class="col-xs-1" style="text-align: center"><%= sort_link @search, :address, "Address"%></th>
-      <th class="col-xs-2" style="text-align: center"><%= sort_link @search, :details, "Details"%></th>
-      <th class="col-xs-1" style="text-align: center"><%= sort_link @search, :date, "date"%></th>
+      <th class="col-xs-1 text-center"><%= sort_link @search, :id, "Patient_ID"%></th>
+      <th class="col-xs-1 text-center"><%= sort_link @search, :Name, "Name"%></th>
+      <th class="col-xs-1 text-center"><%= sort_link @search, :age, "Age"%></th>
+      <th class="col-xs-2 text-center"><%= sort_link @search, :email, "E-mail"%></th>
+      <th class="col-xs-1 text-center"><%= sort_link @search, :address, "Address"%></th>
+      <th class="col-xs-2 text-center"><%= sort_link @search, :details, "Details"%></th>
+      <th class="col-xs-1 text-center"><%= sort_link @search, :date, "date"%></th>
     </tr>
   </thead>
 
@@ -59,14 +58,14 @@
   </tbody>
 </table>
 
-<div style="text-align: center;background-color: none">
+<div class="text-center">
 <%= will_paginate @patients %>
 </div>
-<div class="col-md-12" style="text-align: center;">
+<div class="col-md-12 text-center">
     <%= search_form_for @search do |f| %>
     <%= f.text_field :name_or_details_or_email_or_address_or_age_cont, class: 'form-control center-block',placeholder: "Name/details/email/address" %>
     <%= link_to "Clear", request.path, class: "btn btn-default" %>
-    <%= f.submit class: 'btn btn-primary', style: "margin-left : 3px"%>
+    <%= f.submit class: 'btn btn-primary mg-l-3'%>
     <% end %>
 </div>
 </body>

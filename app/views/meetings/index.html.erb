@@ -3,24 +3,37 @@
 <head>
 </head>
 <body>
-  <div class="row" style="padding-top: 10px;">
+  <% unless has_role?(:nurse) %>
+    <div class="row pd-t-10">
     <div class="col-xs-1 float-left">
           <%= link_to 'Back',patients_path,class: "btn btn-default" %>
     </div>
     <div class="col-xs-2 pull-right">
       <%= link_to 'New Appointment',new_meeting_path,class: "btn btn-default btn-block" %>
-    </div>
-</div>
-  <h1 style="text-align: center;">The Existing Appointments of Dr.<%= current_user.email.split('@')[0].capitalize %></h1>
+    </div> 
+    </div> 
+  <% end %>
+
+  <% if has_role?(:admin)%>
+  <h1 class="text-center">Dear Admin..All the Existing Appointments are</h1>
+  <% elsif has_role?(:nurse) %>
+  <h1 class="text-center">All the Existing Appointments</h1>
+  <% elsif has_role?(:doctor) %>
+  <h1 class="text-center">The Existing Appointments of Dr.<%= current_user.email.split('@')[0].capitalize %></h1>
+  <% end %>
+
   <br>
-  <table class="table table-hover table-striped " style="text-align: center;">
+  <table class="table table-hover table-striped text-center">
   <thead>
     <tr>
-      <th class="col-xs-1" style="text-align: center">Patient-ID</th>
-      <th class="col-xs-1" style="text-align: center">Patient_Name</th>
-      <th class="col-xs-1" style="text-align: center">Appointment Purpose</th>
-      <th class="col-xs-1" style="text-align: center">Start_time</th>
-      <th class="col-xs-1" style="text-align: center">End_Time</th>
+      <th class="col-xs-1 text-center"><%= sort_link @search, :patient_id, "Patient_ID"%></th>
+      <th class="col-xs-1 text-center"><%= sort_link @search, :patient_name, "Patient_Name"%></th>
+      <th class="col-xs-1 text-center"><%= sort_link @search, :name,"Appointment Purpose"%></th>
+      <th class="col-xs-1 text-center">Start_time</th>
+      <th class="col-xs-1 text-center">End_Time</th>
+      <% if has_role?(:nurse) or has_role?(:admin)%>
+        <th class="col-xs-1 text-center"><%= sort_link @search, :user_email, "Doctor Name"%></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -32,23 +45,44 @@
         <td><%= meeting.name %></td>
         <td><%= meeting.start_time %></td>
         <td><%= meeting.end_time %></td>
-        <td width="10%" class="text-right col-xs-1">
+        <% if has_role?(:nurse) or has_role?(:admin) %>
+          <td><%= meeting.user.email.split('@')[0].capitalize %></td>
+        <% end %>
+        <% unless has_role?(:nurse) %>
+          <td width="10%" class="text-right col-xs-1">
           <%= link_to 'Edit',edit_meeting_path(meeting), class: "btn btn-default",color: "black" %>
           <%= link_to 'Delete', meeting, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger btn-outline-danger " %>
-        </td>
+        </td>    
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-<div style="text-align: center;background-color: none">
+
+
+<div class="text-center">
 <%= will_paginate @meetings %>
 </div>
-<div class="col-md-12" style="text-align: center;">
+<div class="col-md-12 text-center" >
     <%= search_form_for @search do |f| %>
-    <%= f.text_field :name_cont, class: 'form-control center-block',placeholder: "Appointment Purpose" %>
+    <%= f.text_field :name_cont, class: 'form-control center-block',placeholder: "Search by Appointment Purpose" %>
     <%= link_to "Clear", request.path, class: "btn btn-default" %>
-    <%= f.submit class: 'btn btn-primary', style: "margin-left : 3px"%>
+    <%= f.submit class: 'btn btn-primary'%>
     <% end %>
 </div>
+<% if has_role?(:nurse) %>
+<div class="container">
+  <%= month_calendar events: @meetings do |date, meetings| %>
+    <%= date %>
+    <% meetings.each do |meeting| %>
+      <div>
+        <%= meeting.patient.name%> has
+        <%= link_to meeting.name, meeting %> 
+      </div>
+    <% end %>
+  </div>
+<% end %>  
+<% end %>
+
 </body>
 </html>

@@ -1,10 +1,10 @@
 <div class="container-xs">
 <div class="modal-body row">
-  <div class="col-xs-3 vfill" style="background-color: rgb(0,113,156);color: white;text-align: center;">
+  <div class="col-xs-3 vfill text-center" style="background-color: rgb(0,128,128);color: white;">
     <h1>Good to have you Onboard</h1>
     <%= image_tag"dental.svg",width: "200px" %>
   </div>
-  <div class="col-xs-9" style="padding-top: 50px">
+  <div class="col-xs-9 pd-t-50">
     <div class="container-fluid text-center">
     <h1>Sign up</h1>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -24,6 +24,10 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "Re-Enter the Password",class: "form-control text-center center-block" %>
     </div>
+    <!--
+    <div class="field">
+      <%= f.label :Roles %><br />
+      <%= f.select :roles, Role.all ,required: true %> -->
   </br>
     <div class="actions">
       <%= f.submit "Sign up", class: "btn btn-primary" %>

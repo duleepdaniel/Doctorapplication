@@ -15,3 +15,89 @@
 */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+.footer {
+          text-align: center;
+          background-color: rgb(0, 83, 156);
+          color: white;
+          position: fixed;
+          width: 100%;
+          bottom:0;
+          margin-top:10px;
+      }
+      .footer-color{
+      color: white;
+      }
+      .footer-color:hover{
+      transform: scale(1.1);
+      }
+    .navbar 
+    {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+    }
+    .dropdown-menu 
+    {
+    width: 100px !important;
+    text-align: center;
+  }
+  .alert {
+  height: 30px;
+  line-height:30px;
+  padding:0px 15px;
+  text-align: center;
+  }
+.row{
+  margin-right:0 !important;
+}
+  .vfill{
+    height: 100%;min-height: 100vh;
+    padding-top: 50px;
+  }
+
+  .modal-body.row{
+    padding-top: 0;
+  }
+  .navbar{
+    margin-bottom: 0;
+  }
+  .form-control{
+    width: 500px;
+    text-align: center;
+  }
+  .alert.alert-danger{
+    margin: 0;
+  }
+    .dropdown-menu 
+  {
+    width: 200px !important;
+    text-align: center;
+  }
+  .jumbotron {
+   vertical-align: middle;
+ }
+ .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: rgb(70,88,127);
+  color: white;
+  font-weight: 700;
+}
+.img:hover{
+  transform: scale(1.1);
+}
+.toggle:hover{
+ transform: scale(1.2); 
+}
+.contact-jumbotron{
+  margin-top: 100px;
+  background-color: rgb(204,233,255);
+}
+.contact-col-r{
+  border-left: 5px solid black; 
+  padding-left: 30px;
+}
+.pd-t-10{
+  padding-top: 10px;
+}
+.pd-t-50{
+  padding-top: 50px;
+}

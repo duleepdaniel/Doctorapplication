@@ -1,18 +1,26 @@
 class MeetingsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_meeting, only: [:show, :edit, :update, :destroy]
-
   # GET /meetings
   # GET /meetings.json
   def index
-    @meetings = Meeting.all
-    @search= current_user.meetings.search(params[:q])
-    if @search.result
-      @meetings=@search.result.paginate(:page => params[:page],:per_page => 3)
-    else
-      @meetings=current_user.meetings.order("created_at DESC").paginate(:page => params[:page],:per_page => 3)
-    end
+    if current_user.has_role? :admin or current_user.has_role? :nurse
+      @search= Meeting.search(params[:q])
+      if @search.result
+        @meetings=@search.result.paginate(:page => params[:page],:per_page => 5)
+      else
+        @meetings=Meeting.order("created_at DESC").paginate(:page => params[:page],:per_page => 5)
+      end
+    elsif current_user.has_role? :doctor
+      @search= current_user.meetings.search(params[:q])
+      if @search.result
+        @meetings=@search.result.paginate(:page => params[:page],:per_page => 5)
+      else
+        @meetings=current_user.meetings.order("created_at DESC").paginate(:page => params[:page],:per_page => 5)
+      end
   end
+end
 
   # GET /meetings/1
   # GET /meetings/1.json
@@ -21,8 +29,12 @@ class MeetingsController < ApplicationController
 
   # GET /meetings/new
   def new
-    @meetings = Meeting.all
-    @meeting = Meeting.new
+    @meeting = current_user.meetings.new
+    if current_user.has_role? :admin 
+      @user_meeting=Meeting.all.paginate(:page => params[:page],:per_page => 8)
+    elsif current_user.has_role? :doctor
+      @user_meeting=current_user.meetings.all.paginate(:page => params[:page],:per_page => 8)
+    end
   end
 
   # GET /meetings/1/edit
@@ -32,7 +44,7 @@ class MeetingsController < ApplicationController
   # POST /meetings
   # POST /meetings.json
   def create
-    @meeting = Meeting.new(meeting_params)
+    @meeting = current_user.meetings.new(meeting_params)
     @meeting.user_id=current_user.id
       if @meeting.save
         redirect_to meetings_path, notice: 'Meeting was successfully created.'

@@ -1,13 +1,18 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
+	#after_create :assign_default_role
+	rolify
+  	# Include default devise modules. Others available are:
+  	# :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_many :patients
-  has_many :meetings
+  	has_many :patients
+  	has_many :meetings
+    #attr_accessible :role_ids
 
-
+  	#def assign_default_role
+    #    add_role(:doctor)  
+  	#end
 
 
 end

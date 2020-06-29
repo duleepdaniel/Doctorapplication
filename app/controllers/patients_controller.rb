@@ -1,27 +1,41 @@
 class PatientsController < ApplicationController
 	before_action :authenticate_user!
+	load_and_authorize_resource
 
 	def index
-		@search= current_user.patients.search(params[:q])
-		if @search.result
-			@patients=@search.result.paginate(:page => params[:page],:per_page => 4)
-		else
-			@patients=current_user.patients.order("created_at DESC").paginate(:page => params[:page],:per_page => 4)
-		end
+		if current_user.has_role? :admin
+			@search= Patient.search(params[:q])
+			if @search.result
+				@patients=@search.result.paginate(:page => params[:page],:per_page => 8)
+			else
+				@patients=Patient.all.order("created_at DESC").paginate(:page => params[:page],:per_page => 8)			
+			end
+		elsif current_user.has_role? :doctor
+			@search= current_user.patients.search(params[:q])
+			if @search.result
+				@patients=@search.result.paginate(:page => params[:page],:per_page => 4)
+			else
+				@patients=current_user.patients.order("created_at DESC").paginate(:page => params[:page],:per_page => 4)
+			end
+		end		
 	end
 
 	def new
-		@user_patient=current_user.patients.all
-		@patient = Patient.new
-
+		@patient = current_user.patients.new
+		if current_user.has_role? :admin 
+			@user_patient=Patient.all.paginate(:page => params[:page],:per_page => 8)
+		elsif current_user.has_role? :doctor
+			@user_patient=current_user.patients.all.paginate(:page => params[:page],:per_page => 8)
+		end
+		
 	end
 
 	def create
 		@patient=current_user.patients.new(patient_params)
       if @patient.save
-        redirect_to patients_path
+        redirect_to patients_path, notice: 'Patient was successfully created.'
      else
-     		redirect_to new_patient_path, alert: "Please Fill all the Details"
+     	render 'new'
     	end
 	end
 
