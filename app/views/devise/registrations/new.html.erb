@@ -24,10 +24,10 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "Re-Enter the Password",class: "form-control text-center center-block" %>
     </div>
-    <!--
     <div class="field">
-      <%= f.label :Roles %><br />
-      <%= f.select :roles, Role.all ,required: true %> -->
+      <%= f.label :Role %>
+      <%= f.select :roles,Role.where.not(name:'admin').pluck(:name),value_method: :name,required: :true %>
+    </div>
   </br>
     <div class="actions">
       <%= f.submit "Sign up", class: "btn btn-primary" %>
