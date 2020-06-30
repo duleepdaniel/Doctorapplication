@@ -30,6 +30,9 @@ end
   # GET /meetings/new
   def new
     @meeting = current_user.meetings.new
+    if current_user.has_role? :doctor
+      @meeting.user_id=current_user.id
+    end
     if current_user.has_role? :admin 
       @user_meeting=Meeting.all.paginate(:page => params[:page],:per_page => 8)
     elsif current_user.has_role? :doctor
@@ -45,11 +48,10 @@ end
   # POST /meetings.json
   def create
     @meeting = current_user.meetings.new(meeting_params)
-    @meeting.user_id=current_user.id
       if @meeting.save
         redirect_to meetings_path, notice: 'Meeting was successfully created.'
       else
-        redirect_to new_meeting_path , alert: "Please fill all the details"
+        redirect_to new_meeting_path,alert: @meeting.errors
       end
   end
 

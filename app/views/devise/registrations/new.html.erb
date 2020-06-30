@@ -26,7 +26,7 @@
     </div>
     <div class="field">
       <%= f.label :Role %>
-      <%= f.select :roles,Role.where.not(name:'admin').pluck(:name),value_method: :name,required: :true %>
+      <%= f.select :roles,Role.where.not(name:'admin').pluck(:name), {value_method: :name},{class: "form-control text-center center-block"} %>
     </div>
   </br>
     <div class="actions">

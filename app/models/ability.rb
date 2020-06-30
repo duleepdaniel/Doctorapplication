@@ -11,7 +11,7 @@ class Ability
          can :manage, :all
        elsif user.has_role? :nurse
          can :read, Meeting
-         cannot :read, Patient #, user_id: user.id
+         can :read, Patient #, user_id: user.id
        elsif user.has_role? :doctor
         can :manage, :all
       else

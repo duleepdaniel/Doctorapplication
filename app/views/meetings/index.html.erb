@@ -3,7 +3,13 @@
 <head>
 </head>
 <body>
-  <% unless has_role?(:nurse) %>
+  <% if has_role?(:nurse) %>
+    <div class="row pd-t-10">
+    <div class="col-xs-1 float-left">
+          <%= link_to 'Show All Patients',patients_path,class: "btn btn-default" %>
+    </div>
+  </div>
+  <% elsif has_role?(:admin) || has_role?(:doctor) %>
     <div class="row pd-t-10">
     <div class="col-xs-1 float-left">
           <%= link_to 'Back',patients_path,class: "btn btn-default" %>
@@ -63,13 +69,24 @@
 <div class="text-center">
 <%= will_paginate @meetings %>
 </div>
-<div class="col-md-12 text-center" >
+<% if has_role?(:doctor) %>
+  <div class="col-md-12 text-center" >
     <%= search_form_for @search do |f| %>
     <%= f.text_field :name_cont, class: 'form-control center-block',placeholder: "Search by Appointment Purpose" %>
     <%= link_to "Clear", request.path, class: "btn btn-default" %>
     <%= f.submit class: 'btn btn-primary'%>
     <% end %>
+  </div>
+<% elsif has_role?(:admin) || has_role?(:nurse) %>
+  <div class="col-md-12 text-center" >
+    <%= search_form_for @search do |f| %>
+    <%= f.text_field :name_or_patient_name_or_user_email_cont, class: 'form-control center-block',placeholder: "Search by Appointment Purpose" %>
+    <%= link_to "Clear", request.path, class: "btn btn-default" %>
+    <%= f.submit class: 'btn btn-primary'%>
+    <% end %>
 </div>
+  
+<% end %>
 <% if has_role?(:nurse) %>
 <div class="container">
   <%= month_calendar events: @meetings do |date, meetings| %>

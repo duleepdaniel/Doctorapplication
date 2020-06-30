@@ -10,6 +10,9 @@
             <th class="text-center">Age</th>
             <th class="text-center">E-Mail</th>
             <th class="text-center">Date</th>
+            <% if has_role? :admin %>
+            <th class="text-center">Doctor Name</th>
+            <% end %>
           </tr>
         </thead>
       <tbody>
@@ -19,6 +22,9 @@
               <td><%= p.age %></td>
               <td><%= p.email %></td>
               <td><%= p.date %></td>
+              <% if has_role? :admin %>
+                <td><%= p.user.email.split("@")[0] %></td>
+              <% end %>
           </tr>
           <% end %>
         </tbody>

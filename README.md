@@ -1,24 +1,5 @@
-# README
+Don't Forget to Run rails db:seed after migration
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Versions:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ruby - 2.6.6 Rails - 5.2.4 Database - PostgreSql

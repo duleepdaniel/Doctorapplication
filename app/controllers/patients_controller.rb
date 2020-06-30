@@ -3,7 +3,7 @@ class PatientsController < ApplicationController
 	load_and_authorize_resource
 
 	def index
-		if current_user.has_role? :admin
+		if current_user.has_role? :admin or current_user.has_role? :nurse
 			@search= Patient.search(params[:q])
 			if @search.result
 				@patients=@search.result.paginate(:page => params[:page],:per_page => 8)
@@ -27,7 +27,6 @@ class PatientsController < ApplicationController
 		elsif current_user.has_role? :doctor
 			@user_patient=current_user.patients.all.paginate(:page => params[:page],:per_page => 8)
 		end
-		
 	end
 
 	def create
@@ -35,7 +34,7 @@ class PatientsController < ApplicationController
       if @patient.save
         redirect_to patients_path, notice: 'Patient was successfully created.'
      else
-     	render 'new'
+     	redirect_to new_patient_path,alert: @patient.errors
     	end
 	end
 
