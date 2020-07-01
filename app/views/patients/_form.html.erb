@@ -30,6 +30,13 @@
     <%= form.datetime_field :date,class: "form-control" %>
   </div>
   </br>
+  <% if has_role?(:admin)%>
+    <div class="form-group">
+    <%= form.label :User %>
+    <%= form.select :user_id,User.with_any_role(:admin,:doctor).pluck(:id),{value_method: :id},{class: "form-control"} %>
+    <%#.where.not(role:"nurse")%>
+  </div>
+  <% end %>
   <div class="actions">
     <%= form.submit class: "btn btn-primary"%>
   </div>

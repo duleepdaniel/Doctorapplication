@@ -21,20 +21,25 @@ class PatientsController < ApplicationController
 	end
 
 	def new
-		@patient = current_user.patients.new
 		if current_user.has_role? :admin 
+			@patient = Patient.new
 			@user_patient=Patient.all.paginate(:page => params[:page],:per_page => 8)
 		elsif current_user.has_role? :doctor
+			@patient = current_user.patients.new
 			@user_patient=current_user.patients.all.paginate(:page => params[:page],:per_page => 8)
 		end
 	end
 
 	def create
-		@patient=current_user.patients.new(patient_params)
-      if @patient.save
-        redirect_to patients_path, notice: 'Patient was successfully created.'
-     else
-     	redirect_to new_patient_path,alert: @patient.errors
+		if current_user.has_role? :admin 
+			@patient=Patient.new(patient_params)
+		elsif current_user.has_role? :doctor
+			@patient=current_user.patients.new(patient_params)
+		end
+      	if @patient.save
+        	redirect_to patients_path, notice: 'Patient was successfully created.'
+     	else
+     		redirect_to new_patient_path,alert: @patient.errors
     	end
 	end
 
@@ -69,6 +74,6 @@ class PatientsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def patient_params
-      params.require(:patient).permit(:name, :age, :email, :address, :details ,:date)
+      params.require(:patient).permit(:name, :age, :email, :address, :details ,:date,:user_id)
     end
 end

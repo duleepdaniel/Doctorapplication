@@ -8,11 +8,10 @@ class User < ApplicationRecord
   
   	has_many :patients
   	has_many :meetings
+    has_one :role
     #attr_accessible :role_ids
 
   	#def assign_default_role
     #  self.add_role(:doctor) if self.roles.blank?
   	#end
-
-
 end

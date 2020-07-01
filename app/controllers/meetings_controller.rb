@@ -29,8 +29,10 @@ end
 
   # GET /meetings/new
   def new
-    @meeting = current_user.meetings.new
-    if current_user.has_role? :doctor
+    if current_user.has_role? :admin
+      @meeting = Meeting.new
+    elsif current_user.has_role? :doctor
+      @meeting = current_user.meetings.new
       @meeting.user_id=current_user.id
     end
     if current_user.has_role? :admin 
@@ -47,7 +49,11 @@ end
   # POST /meetings
   # POST /meetings.json
   def create
-    @meeting = current_user.meetings.new(meeting_params)
+    if current_user.has_role? :admin
+      @meeting = Meeting.new(meeting_params)  
+    elsif current_user.has_role? :doctor
+      @meeting = current_user.meetings.new(meeting_params)  
+    end
       if @meeting.save
         redirect_to meetings_path, notice: 'Meeting was successfully created.'
       else
