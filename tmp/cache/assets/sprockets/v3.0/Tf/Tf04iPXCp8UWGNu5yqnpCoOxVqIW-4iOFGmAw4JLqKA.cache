@@ -1,0 +1,11 @@
+I"Ž(function() {
+  var patients;
+
+  jQuery(function() {});
+
+  patients = $('#user_patient_id').html();
+
+  console.log(patients);
+
+}).call(this);
+:ET

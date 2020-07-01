@@ -93,6 +93,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def meeting_params
-      params.require(:meeting).permit(:name, :start_time, :end_time, :user_id, :patient_id)
+      params.require(:meeting).permit(:name, :start_time, :end_time, :user_id, :patient_id, :user_email)
     end
 end

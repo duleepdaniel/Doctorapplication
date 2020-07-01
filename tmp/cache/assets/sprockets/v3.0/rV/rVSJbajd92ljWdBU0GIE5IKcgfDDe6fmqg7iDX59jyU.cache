@@ -1,0 +1,10 @@
+I"í(function() {
+  jQuery(function() {
+    var patients, user;
+    patients = $('#meeting_patient_id').html();
+    $('#meeting_user_id').change(function() {});
+    return user = $('#meeting_user_id :selected').text();
+  });
+
+}).call(this);
+:ET

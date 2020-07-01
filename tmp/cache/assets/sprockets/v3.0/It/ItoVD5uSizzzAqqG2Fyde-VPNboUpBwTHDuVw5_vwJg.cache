@@ -1,0 +1,9 @@
+I"’(function() {
+  jQuery(function() {
+    var users;
+    users = $('#meeting_user_id').html();
+    return console.log(users);
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,7 @@
+I"c(function() {
+  jQuery(function() {
+    return console.log('#user_id');
+  });
+
+}).call(this);
+:ET

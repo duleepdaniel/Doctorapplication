@@ -31,7 +31,7 @@
     </div>
   <div class="form-group">
       <%= form.label "patient-ID" %>
-      <%= form.grouped_collection_select :patient_id,User.with_any_role(:admin,:doctor),:patients,:email,:id,:name,{include_blank: false},{class: 'form-control'}%>  
+      <%= form.grouped_collection_select :patient_id,User.with_any_role(:admin,:doctor),:patients,:email,:id,:name,{include_blank: true},{class: 'form-control'}%>  
   </div>
   <% elsif has_role?(:doctor) %>
     <div class="form-group">

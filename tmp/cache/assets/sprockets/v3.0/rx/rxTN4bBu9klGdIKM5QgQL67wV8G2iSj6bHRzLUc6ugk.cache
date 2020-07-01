@@ -1,0 +1,7 @@
+I"Q(function() {
+  var users;
+
+  users = $('#user_id').html();
+
+}).call(this);
+:ET

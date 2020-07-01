@@ -1,0 +1,16 @@
+I"´(function() {
+  jQuery(function() {
+    var options, patients, user;
+    patients = $('#user_patient_id').html();
+    $('user_user_id').change(function() {});
+    user = $('#user_user_id :selected').text();
+    options = $(patients).filter("optgroup[label='" + user + "']").html();
+    if (options) {
+      return $('#user_patient_id').html(options);
+    } else {
+      return $('#user_patient_id').empty();
+    }
+  });
+
+}).call(this);
+:ET

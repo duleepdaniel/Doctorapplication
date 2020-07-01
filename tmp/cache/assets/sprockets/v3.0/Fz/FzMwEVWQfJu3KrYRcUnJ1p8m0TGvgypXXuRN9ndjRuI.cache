@@ -1,0 +1,9 @@
+I"ˆ(function() {
+  jQuery(function() {
+    var users;
+    users = $('#user_user_id');
+    return console.log(users);
+  });
+
+}).call(this);
+:ET

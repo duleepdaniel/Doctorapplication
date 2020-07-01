@@ -9,7 +9,7 @@
     <%= javascript_include_tag'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <nav class="navbar">
+    <nav class="navbar navbar-shadow">
       <div class="navbar-header">
         <% if has_role?(:nurse) %>
           <a class="navbar-brand img" href="/meetings">
@@ -37,8 +37,8 @@
     <div class="container-sm">
       <%= yield %>
     </div>
-      <div class="footer">
-        <a class="footer-color" href="/footer" ><h4>Contact us for any Issues</h4></a>
-      </div>
-  </body>
+    <div class="footer">
+      <a class="footer-color" href="/footer" ><h3 class="margin-0">Contact us for any Issues</h3></a>
+    </div>
+</body>
 </html>

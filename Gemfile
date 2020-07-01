@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.6'
 gem 'devise'
 gem 'rolify', '~> 5.2'
+gem "select2-rails"
 #BootStrap -- dependencies
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'

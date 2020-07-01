@@ -4,26 +4,26 @@
 </head>
 <body>
   <% if has_role? :nurse %>
-    <div class="row pd-t-10">
-      <div class="col-xs-1 pull-right">
+    <nav class="navbar pd-t-10">
+      <div class="nav navbar-right">
             <%= link_to 'Show Meetings',meetings_path,class: "btn btn-default" %>
       </div>
-    </div>  
+    </nav> 
   <% elsif has_role?(:admin) || has_role?(:doctor) %>
-  <div class="row pd-t-10">
-    <div class="col-xs-1">
-          <%= link_to 'New Patient',new_patient_path,class: "btn btn-default" %>
+  <nav class="navbar pd-t-10">
+    <div class="navbar-header">
+      <%= link_to 'New Patient',new_patient_path,class: "btn btn-default" %>
     </div>
-    <div class="col-xs-1 pull-right dropdown-menu-right">
-        <div class="dropdown">
+    <div class="nav navbar-right">
+      <div class="dropdown">
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Appointments</button>
           <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenuButton">
             <li><a href="#"><%= link_to('Schedule an Appointment',new_meeting_path) %></a></li>  
             <li><a href="#"><%= link_to('View all Appointments',meetings_path) %></a></li>
           </ul>
         </div>
-    </div>
-  </div>
+      </div>
+    </nav>
   <% end %>
   
     

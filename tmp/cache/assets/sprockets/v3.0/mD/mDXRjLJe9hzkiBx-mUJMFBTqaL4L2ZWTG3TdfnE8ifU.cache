@@ -1,0 +1,7 @@
+I"a(function() {
+  jQuery(function() {
+    return console.log("Duleep");
+  });
+
+}).call(this);
+:ET

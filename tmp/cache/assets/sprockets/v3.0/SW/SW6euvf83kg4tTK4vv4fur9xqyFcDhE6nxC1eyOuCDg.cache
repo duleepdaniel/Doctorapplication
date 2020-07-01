@@ -1,0 +1,11 @@
+I"A(function() {
+  jQuery(function() {
+    var options, patients, user;
+    patients = $('#meeting_patient_id').html();
+    $('#meeting_user_id').change(function() {});
+    user = $('#meeting_user_id :selected').text();
+    return options = $(patients).filter("optgroup[label='" + user + "']").html();
+  });
+
+}).call(this);
+:ET
