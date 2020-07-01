@@ -24,9 +24,9 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "Re-Enter the Password",class: "form-control text-center center-block" %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :Role %>
-      <%= f.select :roles,Role.where.not(name:'admin').pluck(:name), {value_method: :name},{class: "form-control text-center center-block"} %>
+      <%= f.collection_select( :roles,Role.where.not(name:'admin'),:name,:name,{include_black: false},{class: 'form-control text-center center-block'}) %>
     </div>
   </br>
     <div class="actions">
