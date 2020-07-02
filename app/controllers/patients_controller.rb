@@ -6,16 +6,16 @@ class PatientsController < ApplicationController
 		if current_user.has_role? :admin or current_user.has_role? :nurse
 			@search= Patient.search(params[:q])
 			if @search.result
-				@patients=@search.result.paginate(:page => params[:page],:per_page => 8)
+				@patients=@search.result.paginate(:page => params[:page],:per_page => 2)
 			else
-				@patients=Patient.all.order("created_at DESC").paginate(:page => params[:page],:per_page => 8)			
+				@patients=Patient.all.order("created_at DESC").paginate(:page => params[:page],:per_page => 2)			
 			end
 		elsif current_user.has_role? :doctor
 			@search= current_user.patients.search(params[:q])
 			if @search.result
-				@patients=@search.result.paginate(:page => params[:page],:per_page => 4)
+				@patients=@search.result.paginate(:page => params[:page],:per_page => 8)
 			else
-				@patients=current_user.patients.order("created_at DESC").paginate(:page => params[:page],:per_page => 4)
+				@patients=current_user.patients.order("created_at DESC").paginate(:page => params[:page],:per_page => 8)
 			end
 		end		
 	end
