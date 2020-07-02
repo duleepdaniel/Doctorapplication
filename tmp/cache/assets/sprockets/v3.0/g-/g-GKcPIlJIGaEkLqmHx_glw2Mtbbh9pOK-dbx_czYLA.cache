@@ -1,0 +1,19 @@
+I"O(function() {
+  jQuery(function() {
+    var patients;
+    patients = void 0;
+    patients = $('#meeting_patient_id').html();
+    $('#meeting_user_id').change(function() {
+      var new_patients, selected_user, users;
+      selected_user = void 0;
+      new_patients = void 0;
+      users = void 0;
+      users = $('#meeting_user_id').html();
+      selected_user = $('#meeting_user_id option:selected');
+      new_patients = $(patients).filter('optgroup[label=\'' + selected_user.text() + '\']').html();
+      return $('#meeting_patient_id').html(new_patients);
+    });
+  });
+
+}).call(this);
+:ET
